@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 const NavbarDesktop: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -46,6 +47,7 @@ const NavbarDesktop: React.FC = () => {
             className="text-base font-black text-gray-600 hover:text-gray-900 inline-flex items-center"
           >
             Services
+            <ChevronDown className="ml-1 w-4 h-4" />
           </button>
           {openMenu === "services" && (
             <div className="absolute z-10 bg-white shadow-lg rounded-md mt-2 w-40">
@@ -69,6 +71,8 @@ const NavbarDesktop: React.FC = () => {
             className="text-base font-black text-gray-600 hover:text-gray-900 inline-flex items-center"
           >
             Portfolio
+            <ChevronDown className="ml-1 w-4 h-4" />
+            {/**<ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-200 ${openMenu === "portfolio" ? "rotate-180" : ""}`} />*/}
           </button>
           {openMenu === "portfolio" && (
             <div className="absolute z-10 bg-white shadow-lg rounded-md mt-2 w-44">
